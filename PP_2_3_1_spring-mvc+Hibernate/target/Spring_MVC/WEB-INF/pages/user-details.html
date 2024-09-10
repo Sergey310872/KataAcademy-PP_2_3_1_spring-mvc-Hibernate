@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<h2>Details of User</h2>
+
+<form method="post" action="update">
+    <table>
+        <tr>
+            <td>id</td>
+            <td>
+                <p th:text="${user.id}">id</p>
+                <input type="hidden" name="id" th:value="${user.id}">
+            </td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" th:value="*{user.name}"></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text" name="lastName" th:value="*{user.lastName}"></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="number" name="age" th:value="*{user.age}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">
+                    <b>SAVE</b>
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
