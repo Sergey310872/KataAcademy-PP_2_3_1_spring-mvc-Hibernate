@@ -10,7 +10,7 @@ public interface ServiceUser {
 
     public User getUserById(Long id);
 
-    public List<User> updateUser(User user);
+    public void updateUser(User user);
 
-    public List<User> deleteUser(Long id);
+    public void deleteUser(Long id);
 }

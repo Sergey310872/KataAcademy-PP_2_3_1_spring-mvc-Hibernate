@@ -22,14 +22,9 @@ public class UserController {
 
     @GetMapping(value = "/delete")
     public String deleteUser(@RequestParam("id") Optional<Long> id, ModelMap model) {
-        model.addAttribute("messages", serviceUser.deleteUser(id.get()));
-        return "users";
-    }
-
-    @PostMapping(value = "/delete")
-    public String deleteUserP(@RequestParam("id") Optional<Long> id, ModelMap model) {
-        model.addAttribute("messages", serviceUser.getAllUsers());
-        return "users";
+        serviceUser.deleteUser(id.get());
+//        model.addAttribute("messages", serviceUser.deleteUser(id.get()));
+        return "redirect:/";
     }
 
     @GetMapping(value = "/update")
@@ -41,8 +36,9 @@ public class UserController {
 
     @PostMapping(value = "/update")
     public String saveUser(@ModelAttribute("user") User user, ModelMap model) {
-        model.addAttribute("messages", serviceUser.updateUser(user));
-        return "users";
+        serviceUser.updateUser(user);
+//        model.addAttribute("messages", serviceUser.updateUser(user));
+        return "redirect:/";
     }
 
     @GetMapping("/add")

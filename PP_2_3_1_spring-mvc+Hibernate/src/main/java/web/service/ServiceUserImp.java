@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import web.DAO.UserDAO;
 import web.model.User;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -23,12 +24,12 @@ public class ServiceUserImp implements ServiceUser {
     }
 
     @Override
-    public List<User> updateUser(User user) {
-        return userDAO.updateUser(user);
+    public void updateUser(User user) {
+        userDAO.updateUser(user);
     }
 
     @Override
-    public List<User> deleteUser(Long id) {
-        return userDAO.deleteUser(id);
+    public void deleteUser(Long id) {
+        userDAO.deleteUser(id);
     }
 }

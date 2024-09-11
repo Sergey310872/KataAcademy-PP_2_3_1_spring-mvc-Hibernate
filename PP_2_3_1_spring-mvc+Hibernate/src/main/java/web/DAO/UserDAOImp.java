@@ -2,6 +2,7 @@ package web.DAO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import web.model.User;
 
 import javax.persistence.EntityManager;
@@ -9,7 +10,8 @@ import javax.persistence.EntityTransaction;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
+@Repository
 public class UserDAOImp implements UserDAO{
 
     @Autowired
@@ -28,7 +30,7 @@ public class UserDAOImp implements UserDAO{
     }
 
     @Override
-    public List<User> updateUser(User user) {
+    public void updateUser(User user) {
         try {
             transaction = entityManager.getTransaction();
             transaction.begin();
@@ -45,11 +47,10 @@ public class UserDAOImp implements UserDAO{
             e.printStackTrace();
             transaction.rollback();
         }
-        return getAllUser();
     }
 
     @Override
-    public List<User> deleteUser(Long id) {
+    public void deleteUser(Long id) {
         try {
             transaction = entityManager.getTransaction();
             transaction.begin();
@@ -60,6 +61,5 @@ public class UserDAOImp implements UserDAO{
             e.printStackTrace();
             transaction.rollback();
         }
-        return getAllUser();
     }
 }
