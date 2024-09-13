@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface ServiceUser {
 
-    public List<User> getAllUsers();
+    List<User> getAllUsers();
 
-    public User getUserById(Long id);
+    User getUserById(Long id);
 
-    public void updateUser(User user);
+    void updateUser(User user);
 
-    public void deleteUser(Long id);
+    void deleteUser(Long id);
 }

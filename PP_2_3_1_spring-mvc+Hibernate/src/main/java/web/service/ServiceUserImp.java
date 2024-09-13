@@ -24,11 +24,13 @@ public class ServiceUserImp implements ServiceUser {
     }
 
     @Override
+    @Transactional
     public void updateUser(User user) {
         userDAO.updateUser(user);
     }
 
     @Override
+    @Transactional
     public void deleteUser(Long id) {
         userDAO.deleteUser(id);
     }
