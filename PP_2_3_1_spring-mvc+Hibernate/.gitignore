@@ -38,5 +38,5 @@ build/
 .DS_Store
 
 ### My settings ###
-.gitignore
-.idea/
+/.gitignore
+/.idea/
